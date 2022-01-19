@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Luxurious Roman", sans-serif;
+}
+
+body {
+  background-image: url("https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2093&q=80");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.clock {
+  width: 600px;
+  height: 600px;
+  background-image: url(/src/moon.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  position: relative;
+}
+
+.clock .number {
+  --rotation: 0;
+  padding-top: 20px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform: rotate(var(--rotation));
+  font-size: 42px;
+}
+
+.clock .number1 {
+  --rotation: 30deg;
+}
+
+.clock .number2 {
+  --rotation: 60deg;
+}
+
+.clock .number3 {
+  --rotation: 90deg;
+}
+
+.clock .number4 {
+  --rotation: 120deg;
+}
+
+.clock .number5 {
+  --rotation: 150deg;
+}
+
+.clock .number6 {
+  --rotation: 180deg;
+}
+
+.clock .number7 {
+  --rotation: 210deg;
+}
+
+.clock .number8 {
+  --rotation: 240deg;
+}
+
+.clock .number9 {
+  --rotation: 270deg;
+}
+
+.clock .number10 {
+  --rotation: 300deg;
+}
+
+.clock .number11 {
+  --rotation: 330deg;
+}
+
+.clock .hand {
+  --rotation: 0;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  background-color: #000;
+  border: 1px solid #fff;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  transform-origin: bottom;
+  z-index: 10;
+  transform: translate(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.clock::after {
+  content: "";
+  position: absolute;
+  background-color: #000;
+  z-index: 21;
+  width: 25px;
+  height: 25px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.clock .hand.second {
+  width: 5px;
+  height: 45%;
+  background-color: #000;
+}
+
+.clock .hand.minute {
+  width: 10px;
+  height: 40%;
+  background-color: #000;
+}
+
+.clock .hand.hour {
+  width: 14px;
+  height: 33%;
+  background-color: #000;
+}
+
+/* Mobile */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .clock {
+    width: 275px;
+    height: 275px;
+  }
+
+  .clock .number {
+    font-size: 21px;
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .clock {
+    width: 550px;
+    height: 550px;
+  }
+
+  .clock .number {
+    font-size: 42px;
+  }
+}
